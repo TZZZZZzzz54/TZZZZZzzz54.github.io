@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Deep Market</title>
+<link rel="icon" href="favicon.png">
+<meta name="description" content="Catalogue des labos du serveur RP Minecraft.">
+<style>
+@font-face{font-family:Inter;src:url(fonts/inter-regular.woff) format("woff");font-weight:400;font-display:swap}
+@font-face{font-family:"Inter Display";src:url(fonts/inter-display-bold.woff) format("woff");font-weight:700;font-display:swap}
+:root{--nuit:#120A1F;--panneau:#1D1430;--trait:#33264D;--texte:#F4F0FF;--doux:#ADA3C4;--violet:#8B5CF6}
+*{box-sizing:border-box}
+html{background:var(--nuit)}
+body{margin:0;color:var(--texte);font:400 17px/1.55 Inter,system-ui,sans-serif;background:radial-gradient(90rem 34rem at 50% -12rem,#3B1F78 0,transparent 70%)}
+.page{max-width:1120px;margin:auto;padding:clamp(2.5rem,7vw,5.5rem) clamp(1rem,4vw,2.5rem) 3rem}
+h1,h2{font-family:"Inter Display",Inter,sans-serif;font-weight:700;margin:0;letter-spacing:-.022em}
+h1{font-size:clamp(3.4rem,13vw,8.75rem);line-height:.95;letter-spacing:-.04em}
+.intro{margin:1.1rem 0 clamp(2.5rem,6vw,4.5rem);font-size:clamp(1.1rem,2.4vw,1.4rem);color:var(--doux);max-width:34em}
+.labos{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:clamp(1rem,2.4vw,1.75rem);list-style:none;margin:0;padding:0}
+.labo{background:var(--panneau);border-radius:22px;overflow:hidden;display:flex;flex-direction:column;box-shadow:inset 0 0 0 1px var(--trait)}
+.labo img{display:block;width:100%;aspect-ratio:960/555;object-fit:cover;background:#17102A}
+.corps{padding:1.4rem 1.5rem 1.5rem;display:flex;flex-direction:column;gap:.45rem;flex:1}
+h2{font-size:clamp(1.55rem,3vw,2.05rem);line-height:1.1;color:var(--teinte)}
+.corps p{margin:0;color:var(--doux);max-width:38em}
+.achat{margin-top:auto;padding-top:1.1rem;display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.prix{font-family:"Inter Display",Inter,sans-serif;font-weight:700;font-size:1.4rem;font-variant-numeric:tabular-nums}
+button{font:inherit;font-weight:700;cursor:pointer;border:0;border-radius:999px;background:var(--violet);color:#fff;padding:.62rem 1.25rem}
+button:hover{background:#9B73F8}
+button:focus-visible{outline:3px solid #fff;outline-offset:2px}
+footer{margin-top:clamp(3rem,7vw,5rem);color:var(--doux);font-size:.92rem}
+dialog{border:0;border-radius:22px;background:var(--panneau);color:var(--texte);padding:1.75rem;width:min(26rem,calc(100vw - 2rem));box-shadow:inset 0 0 0 1px var(--trait)}
+dialog::backdrop{background:rgba(8,4,16,.72)}
+dialog h2{font-size:1.5rem;color:var(--texte)}
+dialog ol{padding-left:1.25rem;margin:1rem 0 1.5rem}
+dialog li{margin:.35rem 0}
+@media(max-width:640px){.labos{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:no-preference){dialog[open]{animation:ouvre .18s ease-out}@keyframes ouvre{from{opacity:0;transform:translateY(8px)}}}
+</style>
+</head>
+<body>
+<main class="page">
+<h1 id="titre">Deep Market</h1>
+<p class="intro" id="sous-titre"></p>
+<ul class="labos" id="labos"></ul>
+<footer>Serveur RP Minecraft. Tous les articles sont des objets virtuels, disponibles uniquement en jeu.</footer>
+</main>
+<dialog id="fenetre" aria-labelledby="f-titre">
+<h2 id="f-titre">Acheter en jeu</h2>
+<ol>
+<li>Ouvre ta tablette avec la touche O.</li>
+<li>Lance l'appli Deep.</li>
+<li>Touche <strong id="f-nom"></strong> et confirme l'achat.</li>
+</ol>
+<form method="dialog"><button>Compris</button></form>
+</dialog>
+<script type="application/json" id="secours">{"title": "Deep Market", "subtitle": "Livraison discrète, directement dans ton sac", "accent": "#8B5CF6", "products": [{"id": "labo_weed", "name": "Labo de weed", "description": "Serre compacte avec éclairage et ventilation, prête à poser.", "category": "Labos", "button": "Acheter", "price": 32000, "image": "images/weed.jpg", "color": "#4ADE80", "items": [{"item": "minecraft:brewing_stand", "count": 1, "nbt": "{display:{Name:\"Labo de weed\"}}"}]}, {"id": "labo_champignon", "name": "Labo de champignons", "description": "Salle de culture humide, discrète et facile à installer.", "category": "Labos", "button": "Acheter", "price": 38000, "image": "images/champignon.jpg", "color": "#FB923C", "items": [{"item": "minecraft:brewing_stand", "count": 1, "nbt": "{display:{Name:\"Labo de champignons\"}}"}]}, {"id": "labo_coke", "name": "Labo de coke", "description": "Atelier complet pour les organisations qui voient grand.", "category": "Labos", "button": "Acheter", "price": 75000, "image": "images/coke.jpg", "color": "#BAE2FF", "items": [{"item": "minecraft:brewing_stand", "count": 1, "nbt": "{display:{Name:\"Labo de coke\"}}"}]}, {"id": "labo_meth", "name": "Labo de meth", "description": "Laboratoire complet prêt à poser. Production rapide, odeur limitée.", "category": "Labos", "button": "Acheter", "price": 50000, "image": "images/meth.jpg", "color": "#38BDF8", "items": [{"item": "minecraft:brewing_stand", "count": 1, "nbt": "{display:{Name:\"Labo de meth\"}}"}]}]}</script>
+<script>
+function afficher(c){
+  document.getElementById("titre").textContent=c.title;
+  document.title=c.title;
+  document.getElementById("sous-titre").textContent=c.subtitle||"";
+  var liste=document.getElementById("labos");
+  liste.textContent="";
+  c.products.forEach(function(p){
+    var li=document.createElement("li");li.className="labo";
+    if(/^#[0-9a-f]{6}$/i.test(p.color||""))li.style.setProperty("--teinte",p.color);
+    var img=document.createElement("img");img.src=p.image;img.alt="";img.loading="lazy";
+    var corps=document.createElement("div");corps.className="corps";
+    var h=document.createElement("h2");h.textContent=p.name;
+    var d=document.createElement("p");d.textContent=p.description||"";
+    var a=document.createElement("div");a.className="achat";
+    var prix=document.createElement("span");prix.className="prix";
+    prix.textContent=p.price===0?"Gratuit":p.price.toLocaleString("fr-FR")+" $";
+    var b=document.createElement("button");b.type="button";b.textContent="Acheter en jeu";
+    b.addEventListener("click",function(){document.getElementById("f-nom").textContent=p.name;document.getElementById("fenetre").showModal()});
+    a.append(prix,b);corps.append(h,d,a);li.append(img,corps);liste.append(li);
+  });
+}
+afficher(JSON.parse(document.getElementById("secours").textContent));
+fetch("deep.json",{cache:"no-store"}).then(function(r){if(!r.ok)throw 0;return r.json()}).then(afficher).catch(function(){});
+</script>
+</body>
+</html>

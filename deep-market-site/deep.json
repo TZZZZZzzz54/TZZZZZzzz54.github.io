@@ -1,0 +1,75 @@
+{
+  "title": "Deep Market",
+  "subtitle": "Livraison discrète, directement dans ton sac",
+  "accent": "#8B5CF6",
+  "products": [
+    {
+      "id": "labo_weed",
+      "name": "Labo de weed",
+      "description": "Serre compacte avec éclairage et ventilation, prête à poser.",
+      "category": "Labos",
+      "button": "Acheter",
+      "price": 32000,
+      "image": "images/weed.jpg",
+      "color": "#4ADE80",
+      "items": [
+        {
+          "item": "minecraft:brewing_stand",
+          "count": 1,
+          "nbt": "{display:{Name:\"Labo de weed\"}}"
+        }
+      ]
+    },
+    {
+      "id": "labo_champignon",
+      "name": "Labo de champignons",
+      "description": "Salle de culture humide, discrète et facile à installer.",
+      "category": "Labos",
+      "button": "Acheter",
+      "price": 38000,
+      "image": "images/champignon.jpg",
+      "color": "#FB923C",
+      "items": [
+        {
+          "item": "minecraft:brewing_stand",
+          "count": 1,
+          "nbt": "{display:{Name:\"Labo de champignons\"}}"
+        }
+      ]
+    },
+    {
+      "id": "labo_coke",
+      "name": "Labo de coke",
+      "description": "Atelier complet pour les organisations qui voient grand.",
+      "category": "Labos",
+      "button": "Acheter",
+      "price": 75000,
+      "image": "images/coke.jpg",
+      "color": "#BAE2FF",
+      "items": [
+        {
+          "item": "minecraft:brewing_stand",
+          "count": 1,
+          "nbt": "{display:{Name:\"Labo de coke\"}}"
+        }
+      ]
+    },
+    {
+      "id": "labo_meth",
+      "name": "Labo de meth",
+      "description": "Laboratoire complet prêt à poser. Production rapide, odeur limitée.",
+      "category": "Labos",
+      "button": "Acheter",
+      "price": 50000,
+      "image": "images/meth.jpg",
+      "color": "#38BDF8",
+      "items": [
+        {
+          "item": "minecraft:brewing_stand",
+          "count": 1,
+          "nbt": "{display:{Name:\"Labo de meth\"}}"
+        }
+      ]
+    }
+  ]
+}
